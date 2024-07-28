@@ -15,16 +15,18 @@ dfl5.set_index('product_id', inplace=True)
 
 
 clientes_unicos = dfl1['customer_unique_id'].nunique()
-print(f"completo el numero total de clientes unicos son:{clientes_unicos}")
+print("completo el numero total de clientes unicos son:",clientes_unicos)
 
 v_promedio = dfl3['payment_value'].mean()
-print(f"completo muestra el valor promedio pagado por pedido: {v_promedio}")
+print("completo muestra el valor promedio pagado por pedido:",v_promedio)
 
-category_max_vendida = dfl5['product_category_name'].value_counts()
-print(f"completo muestra la categoria mas vendida: {category_max_vendida}")
+category = dfl5['product_category_name'].value_counts()
+max_vendido = category.idxmax()
+print("categoria mas vendida:",max_vendido)
 
-#total_pedidos = 
-#print(f"completo el total de pedidos realizados es: {total_pedidos}")
+
+total_pedidos = len(dfl4)
+print("completo el total de pedidos realizados es:",total_pedidos)
 
 
 
